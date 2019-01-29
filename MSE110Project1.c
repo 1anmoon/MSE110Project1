@@ -51,11 +51,8 @@ task main()
         
         		if((colorG - colorB) > 10)
         		{
-        			motor[left] = -10;
-        			motor[right] = -10;
-        			wait1Msec(500);
           		displayCenteredBigTextLine(5, "%s", "GREEN");
-            	turnLeft(700, degrees, 20);   
+            	turnLeft(840,degrees, 45);
       			}
 
        			else
@@ -63,9 +60,9 @@ task main()
       	  		displayCenteredBigTextLine(5, "%s", "BLUE");
       		  	motor[left] = 15;
      					motor[right] = 15;
-     		   		wait1Msec(1000);
+     		   		wait1Msec(2000);
         			turnRight(700, degrees, 25);
-        			turnLeft(600, degrees,25);
+        			turnLeft(500, degrees, 25);
 	
         		}
 		}
