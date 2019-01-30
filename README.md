@@ -1,4 +1,4 @@
-# MSE110
+# MSE110 (Simon Fraser University)
 
 ## Project 1: Linetracker Robot
 
