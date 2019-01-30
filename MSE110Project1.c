@@ -8,35 +8,35 @@ long colorR, colorB, colorG;
  
 task main()
 {
-    while(1)
-    {
-   	 nMotorEncoder[left] = 0;
-   	 nMotorEncoder[right] = 0;
-   	 getColorRGB(color,colorR,colorG,colorB);
-
-        while(getUSDistance(ultra) > 10)
+	while(1)
 	{
-        	getColorRGB(color,colorR,colorG,colorB);
-      		if(colorR > 19)
-     		{
-            		displayCenteredBigTextLine(5,"%d",colorG);
-            		motor[left] = 10;
-            		motor[right] = -20;
-            		getColorRGB(color,colorR,colorG,colorB);
-        	}
-        	if(colorR < 14)
-        	{
-            		motor[left] = -20;
-            		motor[right] = 10;
-            		getColorRGB(color,colorR,colorG,colorB);
-        	}
-        	if(colorR > 13 && colorR < 20)
-        	{
-            		motor[left] = 25;
-            		motor[right] = 25;
-            		getColorRGB(color,colorR,colorG,colorB);
-        	}
-    	}
+   	 	nMotorEncoder[left] = 0;
+   	 	nMotorEncoder[right] = 0;
+   		getColorRGB(color,colorR,colorG,colorB);
+
+        	while(getUSDistance(ultra) > 10)
+		{
+        		getColorRGB(color,colorR,colorG,colorB);
+      			if(colorR > 19)
+     			{
+            			displayCenteredBigTextLine(5,"%d",colorG);
+            			motor[left] = 10;
+            			motor[right] = -20;
+            			getColorRGB(color,colorR,colorG,colorB);
+        		}
+        		if(colorR < 14)
+        		{
+            			motor[left] = -20;
+            			motor[right] = 10;
+            			getColorRGB(color,colorR,colorG,colorB);
+        		}
+        		if(colorR > 13 && colorR < 20)
+        		{
+            			motor[left] = 25;
+            			motor[right] = 25;
+            			getColorRGB(color,colorR,colorG,colorB);
+        		}
+    		}
     
     		if(getUSDistance(ultra) < 10)
 		{
@@ -51,20 +51,17 @@ task main()
         
         		if((colorG - colorB) > 10)
         		{
-          		displayCenteredBigTextLine(5, "%s", "GREEN");
-            	turnLeft(840,degrees, 45);
+          			displayCenteredBigTextLine(5, "%s", "GREEN");
+            			turnLeft(840,degrees, 45);
       			}
-
-       			else
-        		{    
+       		else
+        	{    
       	  		displayCenteredBigTextLine(5, "%s", "BLUE");
       		  	motor[left] = 15;
-     					motor[right] = 15;
-     		   		wait1Msec(2000);
-        			turnRight(700, degrees, 25);
-        			turnLeft(500, degrees, 25);
-	
-        		}
-		}
+     			motor[right] = 15;
+     		   	wait1Msec(2000);
+        		turnRight(700, degrees, 25);
+        		turnLeft(500, degrees, 25);
+        	}
 	}
 }
