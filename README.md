@@ -9,7 +9,7 @@
   <li>
 Program required : RobotC from http://www.robotc.net/
   </li>
-  <ul>
-<li>
+  <li>
   Video of project demonstartion for download: https://github.com/1anmoon/MSE110Project1/blob/master/video-1548795470.mp4
-    </li>
+  </li>
+</ul>
